@@ -1,0 +1,239 @@
+/* 🌿 Chat container */
+#Assistant {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: #0d0d0d;
+  color: #f2f2f2;
+  font-family: "Inter", sans-serif;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 1rem 140px 1rem; /* space for input */
+  box-sizing: border-box;
+}
+
+/* 💬 AI response container */
+.response-container {
+  width: 100%;
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* 🧠 Response bubble */
+.ai-response {
+  background: linear-gradient(180deg, #1c1c1c 0%, #141414 100%);
+  border: 1px solid #222;
+  border-radius: 1rem;
+  padding: 1.2rem 1.4rem;
+  margin: 0.5rem auto;
+  width: 100%;
+  max-width: 750px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+  animation: fadeIn 0.4s ease;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.7;
+  color: #eaeaea;
+  font-size: 1.05rem;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  letter-spacing: 0.2px;
+}
+
+/* 🧾 Headings inside AI reply */
+.ai-response h3,
+.ai-response h2 {
+  color: #10a37f;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+/* 📄 Paragraphs */
+.ai-response p {
+  margin: 0.6rem 0;
+  line-height: 1.65;
+}
+
+/* 📋 Lists */
+.ai-response ul,
+.ai-response ol {
+  padding-left: 1.5rem;
+  margin: 0.6rem 0;
+}
+
+.ai-response li {
+  margin: 0.3rem 0;
+}
+
+/* 💻 Inline code */
+.ai-response code {
+  background: #222;
+  color: #10a37f;
+  padding: 0.25rem 0.4rem;
+  border-radius: 6px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.95em;
+}
+
+/* 📦 Code block */
+.ai-response pre {
+  background: #111;
+  border-left: 3px solid #10a37f;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  overflow-x: auto;
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+  color: #d4d4d4;
+}
+
+/* ✨ Highlighted keywords */
+.ai-response strong {
+  color: #10a37f;
+  font-weight: 600;
+}
+
+/* ✏️ Textarea fixed at bottom */
+#Assistant textarea {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 750px;
+  min-height: 50px;
+  max-height: 200px;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 1rem;
+  padding: 0.8rem 3.3rem 0.8rem 1rem;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  caret-color: #10a37f;
+  box-shadow: 0 0 10px rgba(16, 163, 127, 0.2);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+/* 💡 Placeholder style */
+#Assistant textarea::placeholder {
+  color: #999;
+}
+
+/* 🚀 Send button */
+#Assistant button {
+  position: fixed;
+  bottom: 18px;
+  right: calc(50% - 370px);
+  background: #10a37f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s ease;
+}
+
+#Assistant button:hover {
+  background: #0d8a6e;
+}
+
+#Assistant button.blurred {
+  background: #444;
+  cursor: not-allowed;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Tablet responsiveness */
+@media (max-width: 768px) {
+  #Assistant {
+    padding-bottom: 120px;
+  }
+
+  #Assistant textarea {
+    width: 92%;
+    font-size: 16px;
+    bottom: 12px;
+    padding: 0.8rem 3rem 0.8rem 1rem;
+  }
+
+  #Assistant button {
+    right: 5%;
+    bottom: 17px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .ai-response {
+    font-size: 1.02rem;
+    line-height: 1.6;
+    margin: 0.6rem 0;
+    padding: 0.9rem 1rem;
+  }
+}
+
+/* 📱 Mobile optimization */
+@media (max-width: 460px) {
+  #Assistant {
+    padding-bottom: 130px;
+  }
+
+  #Assistant textarea {
+    width: 93%;
+    font-size: 15px;
+    bottom: 10px;
+    padding: 0.8rem 2.8rem 0.8rem 1rem;
+  }
+
+  #Assistant button {
+    right: 6%;
+    bottom: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .ai-response {
+    width: 96%;
+    font-size: 1rem;
+    line-height: 1.55;
+    padding: 0.9rem 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .ai-response h3 {
+    font-size: 1.1rem;
+  }
+
+  .ai-response code,
+  .ai-response pre {
+    font-size: 0.95rem;
+  }
+}

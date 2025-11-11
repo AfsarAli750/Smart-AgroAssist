@@ -1,0 +1,38 @@
+/* When result is not visible, it shouldn't reserve space */
+
+#result {
+  display: flex;
+  flex-direction: column;
+}
+h2 {
+  margin-top: 1rem;
+  font-size: 1rem;
+  margin-left: 2rem;
+  word-break: break-all;
+  width: 80%;
+  color: greenyellow;
+}
+
+@media (min-width: 768px) {
+  .resultNotEmpty {
+    width: 50%;
+    margin-top: 2rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    width: 70%;
+    height: 20rem;
+    border-radius: 2rem;
+    margin-left: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  img {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    width: 80%;
+    height: 30vh;
+    border-radius: 1rem;
+  }
+}

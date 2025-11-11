@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: backendforcropprediction
+    env: python
+    buildCommand: pip install -r Backend/requirements.txt
+    startCommand: uvicorn Backend.App:app --host 0.0.0.0 --port 10000

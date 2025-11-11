@@ -1,0 +1,95 @@
+[
+    {
+        "crop" : "rice" ,
+        "img" : "https://i.pinimg.com/736x/51/06/fc/5106fc8c75a47b05f97e52217539f250.jpg"
+    },
+    {
+        "crop" : "maize" ,
+        "img" : "https://i.pinimg.com/736x/b4/dd/30/b4dd3032719250e6bf6de0cc20a7b831.jpg"
+    }
+    ,
+    {
+        "crop" : "chickpea" ,
+        "img" : "https://i.pinimg.com/1200x/2d/69/aa/2d69aaecd9b703cfc6d8fcea63469e32.jpg"
+    },
+    {
+        "crop" : "kidneybeans" ,
+        "img" : "https://i.pinimg.com/736x/b2/df/52/b2df529aa1e3bbb339908447b1ca45dd.jpg"
+    }
+    ,
+    {
+        "crop" : "pigeonpeas" ,
+        "img" : "https://i.pinimg.com/736x/4e/7e/b7/4e7eb79dbbd10edfd1017285a6ed2556.jpg"
+    },
+    {
+        "crop" : "mothbeans" ,
+        "img" : "https://i.pinimg.com/1200x/51/69/82/5169820c263ab236c00a49b2bac19b2b.jpg"
+    },
+    {
+        "crop" : "mungbean" ,
+        "img" : "https://i.pinimg.com/736x/3a/11/c7/3a11c7436dd72dd71ecda3387cbb0f1a.jpg"
+    },
+    {
+        "crop" : "blackgram" ,
+        "img" : "https://i.pinimg.com/1200x/d3/80/90/d380905b76ba45e44176cf8a38630589.jpg"
+    }
+    ,
+    {
+        "crop" : "lentil" ,
+        "img" : "https://i.pinimg.com/1200x/62/af/2e/62af2eecf8c9e39ee47c9476af1e26c3.jpg"
+    },
+    {
+        "crop" : "pomegranate" ,
+        "img" : "https://i.pinimg.com/736x/25/99/5f/25995f07dd24e57acedf49ed229a0333.jpg"
+    },
+    {
+        "crop" : "banana" ,
+        "img" : "https://i.pinimg.com/1200x/ac/38/86/ac3886ed1b64853efec7aad0920b782c.jpg"
+    },
+    {
+        "crop" : "mango" ,
+        "img" : "https://i.pinimg.com/1200x/25/06/31/25063170c6ea0c1f0d77fb2c286611fd.jpg"
+    },
+    {
+        "crop" : "grapes" ,
+        "img" : "https://i.pinimg.com/1200x/68/d9/4d/68d94df55d2f4bcea3886dd6219f76e2.jpg"
+    }
+    ,{
+        "crop" : "watermelon" ,
+        "img" : "https://i.pinimg.com/736x/9f/63/d7/9f63d75d13fdc3b2eff9cf894621e83b.jpg"
+    },
+    {
+        "crop" : "muskmelon" ,
+        "img" : "https://i.pinimg.com/1200x/c8/80/6c/c8806c0a320cce5b393a28db9862b620.jpg"
+    }
+    ,
+    {
+        "crop" : "apple" ,
+        "img" : "https://i.pinimg.com/736x/8a/0d/5b/8a0d5b1e9d7809f13736938d777778e7.jpg"
+    },
+    {
+        "crop" : "orange" ,
+        "img" : "https://i.pinimg.com/1200x/c5/d3/3d/c5d33dd15146443af093b689153a0193.jpg"
+    },
+    {
+        "crop" : "papaya" ,
+        "img" : "https://i.pinimg.com/736x/ce/f5/13/cef513e44f9670c35ff2ff39a15a2967.jpg"
+    },
+    {
+        "crop" : "coconut" ,
+        "img" : "https://i.pinimg.com/1200x/bf/ba/24/bfba24b11535ce94aa1b1be2b75106a6.jpg"
+    },
+    {
+        "crop" : "cotton" ,
+        "img" : "https://i.pinimg.com/736x/10/39/9b/10399bd4e8048cbd123f9febd8a2b906.jpg"
+    },
+    {
+        "crop" : "jute" ,
+        "img" : "https://i.pinimg.com/1200x/e2/b0/5c/e2b05c36be5d3af433cb89298d0f5a2c.jpg"
+    },
+    {
+        "crop" : "coffee" ,
+        "img" : "https://i.pinimg.com/1200x/f9/79/16/f97916e689b31517cbcfa32520e4a8d9.jpg"
+    }
+    
+]
