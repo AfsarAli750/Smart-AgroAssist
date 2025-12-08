@@ -7,46 +7,58 @@ import { RiPauseCircleFill } from "react-icons/ri";
 
 const Ai = () => {
   const [prompt, setPrompt] = useState("");
-  const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
+  const [message, setMessages] = useState([]);
   const messagesEndRef = useRef(null);
 
   // Scroll to bottom when response updates
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [response]);
+  }, [message]);
 
   // ✅ Ask AI function
   const handleAsk = async () => {
     if (!prompt.trim()) return;
-    setLoading(true);
-    setResponse("");
 
+    const userMessage = prompt;
+
+    // ✅ 1. Add USER message immediately
+    setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
+    setPrompt("");
+    setLoading(true);
     try {
       const res = await fetch("https://ai-assistant-rdo9.onrender.com/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: prompt }),
+        body: JSON.stringify({ message: userMessage }),
       });
 
       const data = await res.json();
 
-      if (res.ok) {
-        const cleanText = (data.reply || "No response from AI").trimStart();
+      const cleanText = (data.reply || "No response from AI").trimStart();
 
-        // ✅ Smooth typing animation
-        let currentText = "";
-        for (let i = 0; i < cleanText.length; i++) {
-          currentText += cleanText[i];
-          setResponse(currentText);
-          await new Promise((r) => setTimeout(r, 10)); // Reduced delay for better UX
-        }
-      } else {
-        setResponse(`❌ Error: ${data.error || "Unknown error"}`);
+      // ✅ 2. Create EMPTY AI message for typing
+      setMessages((prev) => [...prev, { role: "ai", content: "" }]);
+
+      let currentText = "";
+
+      // ✅ 3. Typing animation into LAST ai message
+      for (let i = 0; i < cleanText.length; i++) {
+        currentText += cleanText[i];
+
+        setMessages((prev) => {
+          const updated = [...prev];
+          updated[updated.length - 1].content = currentText;
+          return updated;
+        });
+
+        await new Promise((r) => setTimeout(r, 10));
       }
     } catch (err) {
-      console.error(err);
-      setResponse("❌ Error connecting to backend. Please try again later.");
+      setMessages((prev) => [
+        ...prev,
+        { role: "ai", content: "❌ Error connecting to backend." },
+      ]);
     }
 
     setLoading(false);
@@ -72,17 +84,21 @@ const Ai = () => {
   return (
     <div id="Assistant">
       {/* ✅ Response Section - Moved to top for proper layout */}
-      {response && (
-        <div className="response-container">
-          <div className="ai-response">
-            <h3>🧠 AI Response:</h3>
+      <div className="response-container">
+        {message.map((msg, index) => (
+          <div
+            key={index}
+            className={msg.role === "user" ? "user-message" : "ai-response"}
+          >
+            <h3>{msg.role === "user" ? "🧑 You:" : "💭 AI Response:"}</h3>
+
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {response}
+              {msg.content}
             </ReactMarkdown>
           </div>
-          <div ref={messagesEndRef} /> {/* For scrolling */}
-        </div>
-      )}
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
 
       {/* ✅ Input Textarea */}
       <textarea

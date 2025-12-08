@@ -6,19 +6,20 @@ form {
 
 form input::placeholder {
   font-size: 1rem;
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 form input {
   outline: none;
   border-width: 0 0 0.1em 0;
   border-color: aqua;
-  background-color: #111;
+  background: #134e3a;
   font-weight: bolder;
   padding-left: 1rem;
   cursor: pointer;
   caret-color: greenyellow;
   color: greenyellow;
+  border-radius: 10px;
 }
 
 button {
@@ -27,13 +28,14 @@ button {
 
 button:hover {
   background-color: rgb(133, 187, 53);
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
   form input,
   button {
     width: 70%;
-    height: 2rem;
+    height: 2.5rem;
     margin-top: 1rem;
   }
 
@@ -41,9 +43,9 @@ button:hover {
     width: 50%;
   }
 
-  form button{
+  form button {
     border-radius: 2rem;
-    height:3rem;
+    height: 3rem;
   }
 }
 
